@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 RUN apk add --no-cache swig libressl-dev python-dev libusb py-yaml py-flask py-pip build-base unzip curl
-RUN curl -L -o /tmp/master.zip https://github.com/happyleavesaoc/python-firetv/archive/master.zip \
+RUN curl -L -o /tmp/master.zip https://github.com/happyleavesaoc/python-firetv/archive/fcda3843ba32171c819f618ef59b933915f960b9.zip \
         && cd /tmp \
         && unzip master.zip
 
