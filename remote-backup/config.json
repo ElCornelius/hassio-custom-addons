@@ -2,7 +2,7 @@
   "name": "Remote Backup",
   "version": "0.3.1",
   "slug": "remote_backup",
-  "description": "Exploit snapshots and SCP to create remote backups to specified server",
+  "description": "Exploit snapshots and SCP to create remote backups to specified server.",
   "url": "https://github.com/ElCornelius/hassio-remote-backup",
   "startup": "once",
   "boot": "manual",
