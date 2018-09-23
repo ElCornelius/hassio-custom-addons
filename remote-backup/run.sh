@@ -43,7 +43,7 @@ function copy-backup-to-remote {
       echo "Copying ${slug}.tar to ${REMOTE_DIRECTORY} on ${SSH_HOST} using SCP"
       if [[ ${SSH_DSS} ]]; then
         echo "Use ssh-dss"
-        scp -F -oHostKeyAlgorithms=+ssh-dss "${HOME}/.ssh/config" "${slug}.tar" remote:"${REMOTE_DIRECTORY}"
+        scp -oHostKeyAlgorithms=+ssh-dss -F "${HOME}/.ssh/config" "${slug}.tar" remote:"${REMOTE_DIRECTORY}"
       else
         scp -F "${HOME}/.ssh/config" "${slug}.tar" remote:"${REMOTE_DIRECTORY}"
       fi
@@ -52,7 +52,7 @@ function copy-backup-to-remote {
       zip -P "$ZIP_PASSWORD" "${slug}.zip" "${slug}".tar
       if [[ ${SSH_DSS} ]]; then
         echo "Use ssh-dss"
-        scp -F -oHostKeyAlgorithms=+ssh-dss "${HOME}/.ssh/config" "${slug}.zip" remote:"${REMOTE_DIRECTORY}" && rm "${slug}.zip"
+        scp -oHostKeyAlgorithms=+ssh-dss -F "${HOME}/.ssh/config" "${slug}.zip" remote:"${REMOTE_DIRECTORY}" && rm "${slug}.zip"
       else
         scp -F "${HOME}/.ssh/config" "${slug}.zip" remote:"${REMOTE_DIRECTORY}" && rm "${slug}.zip"
       fi
