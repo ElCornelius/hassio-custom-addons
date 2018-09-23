@@ -11,7 +11,7 @@ SSH_KEY=$(jq --raw-output ".ssh_key[]" $CONFIG_PATH)
 REMOTE_DIRECTORY=$(jq --raw-output ".remote_directory" $CONFIG_PATH)
 ZIP_PASSWORD=$(jq --raw-output '.zip_password' $CONFIG_PATH)
 KEEP_LOCAL_BACKUP=$(jq --raw-output '.keep_local_backup' $CONFIG_PATH)
-SSH_DSS=$(jq --raw-output '.ssh-dss' $CONFIG_PATH)
+SSH_DSS=$(jq --raw-output ".ssh-dss" $CONFIG_PATH)
 
 # create variables
 SSH_ID="${HOME}/.ssh/id"
